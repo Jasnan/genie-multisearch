@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app="credise" ng-csp>
+  <head>
+    <link rel="stylesheet" href="../assets/styles/bootstrap.min.css">
+    <!-- <link href="../assets/styles/main.css" rel="stylesheet"> -->
+  </head>
+  <body ng-controller="optionsCtrl">
+    <div class="container-fluid">
+      <h3>Credise Multi-Search Options</h3>
+        <div>
+            <label for="state">My native/main languge is:</label>
+            <select id="state" 
+                ng-model="nativeLang"
+                ng-options="key as value for (key , value) in nativeLangs"
+                ng-change="setNativeLang(nativeLang)">
+            </select>
+        </div>
+        
+        <div>
+          <ul class="nav nav-tabs">
+            <li ng-repeat="(key , value) in availableLangs"  ui-sref-active="active">
+              <a ui-sref="details({ id: nativeLang + key })" data-toggle="tab" aria-expanded="false">{{value}}</a>
+            </li>
+          </ul>
+        </div>
+        <div ui-view=""></div>
+    </div>
+
+    <script src="../assets/js/angular.min.js"></script>
+    <script src="../assets/js/angular-ui-router.min.js"></script>
+    <script src="../assets/js/angular-sanitize.min.js"></script>    
+    <script src="../assets/js/ngStorage.min.js"></script>
+    <script src="../assets/js/lodash.min.js"></script>  
+    <script src="../scripts/background.js"></script>  
+    <script src="../scripts/options.js"></script>
+    <script src="../scripts/routes.js"></script>
+  </body>
+</html>

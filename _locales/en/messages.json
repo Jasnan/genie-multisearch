@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "credise multi search",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "An awsome multi-search tool to speed up your language learning process",
+    "description": "The description of the application"
+  }
+}
