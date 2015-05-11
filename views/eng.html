@@ -45,7 +45,7 @@
 			    <td>{{$index + 1}}</td>
 			    <td>{{asd.name}}</td>
 			    <td>{{asd.url}}</td>
-			    <td>{{asd.translate}}</td>
+			    <td>{{asd.translate | checkmark}}</td>
 			    <td>
 			        <a href="" ng-click="edit(asd)">edit</a> |
 			        <a href="" ng-click="delete(asd)">delete</a>

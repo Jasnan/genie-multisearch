@@ -12,14 +12,21 @@ angular.module('credise', ['ngStorage','ui.router','ngSanitize'])
 			if(form.$valid){
 				if ($scope.searchTerm){
 					var alltabs = Languages.getTabs($scope.nativeLang + $scope.searchLang)
-
+					console.log(alltabs)
 					var alltabs =
 						alltabs
 						.filter(function(tab){
 							return (tab.url.indexOf("[search]") > -1);
 						})
 						.map(function(tab){
-							return tab.url.replace("[search]",$scope.searchTerm);
+							var newtaburl = tab.url.replace("[search]",$scope.searchTerm);
+							if(tab.translate){
+								var trurl = Languages.getTranslator($scope.searchLang);
+								var newtaburlencoded = encodeURIComponent(newtaburl).replace(/'/g,"%27").replace(/"/g,"%22");
+								newtaburl = trurl.replace("[translate]",newtaburlencoded);
+							}
+
+							return newtaburl
 						})
 
 					createTabs(alltabs)
@@ -45,11 +52,12 @@ angular.module('credise', ['ngStorage','ui.router','ngSanitize'])
 function createTabs (alltabs){
 	var i = 0;
 	alltabs.forEach(function(taburl){
+
 		chrome.tabs.create({
 			index: i,
 			url: taburl
 		}, function(tab){
-			console.log(tab.url);
+			console.log(taburl);
 			i++;
 		})
 	})

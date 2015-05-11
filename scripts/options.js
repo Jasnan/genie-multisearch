@@ -1,8 +1,12 @@
 'use strict';
 
 angular.module('credise')
-	.controller('optionsCtrl', function($scope, $localStorage, $stateParams) {
+	.controller('optionsCtrl', function($scope, $localStorage, $stateParams, Languages) {
 		$scope.message = "working!!"
+		$scope.loadDefaults = function(){			
+			Languages.loadDefaults()
+			// $state.go($state.current, {}, {reload: true});
+		}
 	  	$scope.newtab = {};
 	  	$scope.editmode = false;
 	  	$scope.nativeLang = $localStorage.nativeLang || 'eng';
@@ -61,7 +65,8 @@ angular.module('credise')
 	  }
 	   
 	  $scope.load = function() {
-	  	// alert(id)
+	  	var id = id || $stateParams.id; 
+	  	alert(id)
 	    $scope.tabs = $localStorage[id];
 	    console.log($scope.tabs)
 	  }
@@ -83,4 +88,10 @@ angular.module('credise')
 
 	  $scope.tabs = $localStorage[id];
 
+	})
+
+	.filter('checkmark', function() {
+	  return function(input) {
+	    return input ? '\u2713' : '\u2718';
+	  };
 	});

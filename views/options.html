@@ -6,32 +6,45 @@
   </head>
   <body ng-controller="optionsCtrl">
     <div class="container-fluid">
-      <h3>Credise Multi-Search Options</h3>
-        <div>
-            <label for="state">My native/main languge is:</label>
-            <select id="state" 
-                ng-model="nativeLang"
-                ng-options="key as value for (key , value) in nativeLangs"
-                ng-change="setNativeLang(nativeLang)">
-            </select>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Credise Multi-Search Options</h3>
         </div>
-        
-        <div>
-          <ul class="nav nav-tabs">
-            <li ng-repeat="(key , value) in availableLangs"  ui-sref-active="active">
-              <a ui-sref="details({ id: nativeLang + key })" data-toggle="tab" aria-expanded="false">{{value}}</a>
-            </li>
-          </ul>
+        <div class="panel-body">
+          <div>
+              <label for="state" class="control-label">My native/main languge is:</label>
+              <select id="state" 
+                  ng-model="nativeLang"
+                  ng-options="key as value for (key , value) in nativeLangs"
+                  ng-change="setNativeLang(nativeLang)">
+              </select>
+          </div>
+          
+          <div>
+            <button ng-click="loadDefaults()">Load Defaults</button>
+          </div>
+
+          <div>
+            <ul class="nav nav-tabs">
+              <li ng-repeat="(key , value) in availableLangs"  ui-sref-active="active">
+                <a ui-sref="details({ id: nativeLang + key })" data-toggle="tab" aria-expanded="false">{{value}}</a>
+              </li>
+            </ul>
+          </div>
+          
+          <div ui-view=""></div>
         </div>
-        <div ui-view=""></div>
+      </div>
+
     </div>
 
     <script src="../assets/js/angular.min.js"></script>
-    <script src="../assets/js/angular-ui-router.min.js"></script>
-    <script src="../assets/js/angular-sanitize.min.js"></script>    
+    <script src="../assets/js/angular-sanitize.min.js"></script> 
+    <script src="../assets/js/angular-ui-router.min.js"></script>       
     <script src="../assets/js/ngStorage.min.js"></script>
     <script src="../assets/js/lodash.min.js"></script>  
     <script src="../scripts/background.js"></script>  
+    <script src="../scripts/languages.factory.js"></script> 
     <script src="../scripts/options.js"></script>
     <script src="../scripts/routes.js"></script>
   </body>
