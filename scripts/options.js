@@ -33,6 +33,7 @@ angular.module('credise')
 	  	$localStorage.nativeLang = argument || 'eng';
 	  	$scope.nativeLang = argument;
 	  	$scope.availableLangs = $scope.langStack[argument];
+	  	console.log($scope.availableLangs);
 	  }
 
 	  var id = $stateParams.id;

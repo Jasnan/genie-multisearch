@@ -7,9 +7,10 @@ angular.module('credise', ['ngStorage','ui.router','ngSanitize'])
 		$scope.langOptions = Languages.options();
 		$scope.searchLang = Languages.searchLang();
 
+		console.log($scope.langOptions)
 		$scope.search = function(form){
-			$scope.submitted = true;
-			if(form.$valid){
+			// $scope.submitted = true;
+			// if(form.$valid){
 				if ($scope.searchTerm){
 					var alltabs = Languages.getTabs($scope.nativeLang + $scope.searchLang)
 					console.log(alltabs)
@@ -31,13 +32,40 @@ angular.module('credise', ['ngStorage','ui.router','ngSanitize'])
 
 					createTabs(alltabs)
 				} 
+			// }
+		}
+
+		// A selection context onclick callback function.
+		$scope.selectionOnClick = function(info){
+			
+			$scope.searchLang = info.menuItemId;
+			$scope.searchTerm = info.selectionText;
+			$scope.search();
+		}
+
+		$scope.createContextMenu = function(){
+			var context = "selection";
+			var title = "Search '" + context + "' with Credise";
+			var id = chrome.contextMenus.create({"title": title, "contexts":[context]});
+
+			for (var item in $scope.langOptions) {
+					chrome.contextMenus.create({"id":item, "title": $scope.langOptions[item], "parentId": id, "contexts":[context], "onclick": function(info){
+						$scope.selectionOnClick(info)}});
 			}
+
+			chrome.contextMenus.create({"type":"separator", "parentId": id, "contexts":[context]});
+
+			chrome.contextMenus.create({"parentId": id, "title":"Options", "contexts":[context],"onclick": function(){
+				$scope.openSettings();
+			}});
+ 
 		}
 
 		$scope.openSettings = function(){
 			chrome.tabs.create({'url': "/views/options.html" } )
 		}
 
+		$scope.createContextMenu();
 	}])
 
 	.run(function() {
@@ -46,6 +74,7 @@ angular.module('credise', ['ngStorage','ui.router','ngSanitize'])
 		});
 
 		chrome.browserAction.setBadgeText({text: 'CREDISE'});
+		
 	});
 
 
@@ -63,3 +92,5 @@ function createTabs (alltabs){
 	})
 
 }
+
+
