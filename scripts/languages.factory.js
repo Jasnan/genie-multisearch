@@ -3,17 +3,23 @@
 angular.module('credise')
 	.factory('Languages',function($localStorage, $http){
 		var defaultNative = 'eng';
+		var nativeLangStack = {'eng':'English','deu':'Deutsch','rum':'Română'};
 		var langStack = {
 			"eng":  {	
+						"ara":"Arabic (الْعَرَبيّة)",
 						"eng":"English",
-						"chi":"中文 (Mandarin Chinese)",
-						"deu":"Deutsch",
-						"epo":"Esperanto",
-		  				"fre":"Français",
-		  				"jpn":"日本語 (Japanese)",
-		  				"pol":"Polski",
-		  				"rum":"Română",	
-		  				"spa":"Español"
+						"fre":"French (Français)",
+						"deu":"German (Deutsch)",						
+						"heb":"Hebrew",
+						"hin":"Hindi (हिन्दी)",
+						"ita":"Italian (italiano)",	
+						"jpn":"Japanese (日本語)",
+						"kor":"Korean",	
+						"chi":"Mandarin (中文)",	
+						"pol":"Polish (Polski)",
+						"por":"Portuguese (português)",					
+		  				"rum":"Romanian (Română)",	
+		  				"spa":"Spanish (Español)"
 			  		},
 			"deu": 	{	"eng":"English" },
 			"rum": 	{	"eng":"English" }
@@ -33,6 +39,9 @@ angular.module('credise')
 			options: function(){
 				var native = $localStorage.nativeLang || defaultNative;
 				return langStack[native];
+			},
+			getNativeLangs: function(){
+				return nativeLangStack;
 			},
 			searchLang: function(){
 				return $localStorage.searchLang || "eng";

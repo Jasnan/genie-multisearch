@@ -1,38 +1,51 @@
 <!doctype html>
 <html ng-app="credise" ng-csp>
   <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="../assets/styles/bootstrap.min.css">
     <!-- <link href="../assets/styles/main.css" rel="stylesheet"> -->
   </head>
   <body ng-controller="optionsCtrl">
     <div class="container-fluid">
+      <br>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Credise Multi-Search Options</h3>
+          <h2 class="panel-title">Genie Multisearch Options</h2>
         </div>
         <div class="panel-body">
-          <div>
-              <label for="state" class="control-label">My native/main languge is:</label>
-              <select id="state" 
-                  ng-model="nativeLang"
-                  ng-options="key as value for (key , value) in nativeLangs"
-                  ng-change="setNativeLang(nativeLang)">
-              </select>
-          </div>
-          
-          <div>
-            <button ng-click="loadDefaults()">Load Defaults</button>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="state" class="control-label">My native/main language is:</label>
+                <select id="state" 
+                    ng-model="nativeLang"
+                    ng-options="key as value for (key , value) in nativeLangs"
+                    ng-change="setNativeLang(nativeLang)"
+                    class="form-control">
+                </select>
+              </div>            
+              
+              <div class="list-group">                
+                  <a ng-repeat="(key , value) in availableLangs" ui-sref-active="active" class="list-group-item" ui-sref="details({ id: nativeLang + key })">{{value}}</a>
+              </div>
+              
+              <div class="well">
+                <h4>Warning!</h4>
+                <p>Use the following button with caution. It will wipe all your custom tab settings and reset tabs/languages settings to default.</p>
+                <br>
+                <a href="#" ng-click="loadDefaults()" class="btn btn-danger btn-sm btn-block">Reset all tabs to defaults?</a>
+              </div>
+                
+            </div>
+            
+            <div class="col-md-9">
+              <div ui-view=""></div>
+            </div>
           </div>
 
-          <div>
-            <ul class="nav nav-tabs">
-              <li ng-repeat="(key , value) in availableLangs"  ui-sref-active="active">
-                <a ui-sref="details({ id: nativeLang + key })" data-toggle="tab" aria-expanded="false">{{value}}</a>
-              </li>
-            </ul>
-          </div>
+
           
-          <div ui-view=""></div>
+          
         </div>
       </div>
 
@@ -43,9 +56,7 @@
     <script src="../assets/js/angular-ui-router.min.js"></script>       
     <script src="../assets/js/ngStorage.min.js"></script>
     <script src="../assets/js/lodash.min.js"></script>  
-    <script src="../scripts/background.js"></script>  
+    <script src="../scripts/app.js"></script>  
     <script src="../scripts/languages.factory.js"></script> 
-    <script src="../scripts/options.js"></script>
-    <script src="../scripts/routes.js"></script>
   </body>
 </html>

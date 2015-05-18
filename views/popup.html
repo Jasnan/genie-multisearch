@@ -3,10 +3,17 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../assets/styles/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
-    <link href="../assets/styles/main.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css"> -->
+    <!-- <link href="../assets/styles/main.css" rel="stylesheet"> -->
+    <style>
+      div.wraper {
+        width: 400px;   
+        padding: 20px;
+        font-size: 14px;
+      }
+    </style>
   </head>
-  <body ng-controller="backgroundCtrl">
+  <body ng-controller="popupCtrl">
     <div class="wraper container-fluid">
         <form class="form-horizontal" name="form" ng-submit="search(form)" novalidate>
             <fieldset>
@@ -47,9 +54,7 @@
     <script src="../assets/js/angular-sanitize.min.js"></script>
     <script src="../assets/js/ngStorage.min.js"></script>
     <script src="../assets/js/lodash.min.js"></script> 
-    <script src="../scripts/background.js"></script>   
+    <script src="../scripts/app.js"></script>   
     <script src="../scripts/languages.factory.js"></script> 
-    <script src="../scripts/options.js"></script>
-    <script src="../scripts/routes.js"></script>
   </body>
 </html>

@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "credise multi search",
-    "description": "The name of the application"
+    "message": "Genie Multisearch",
+    "description": "Genie Multisearch"
   },
   "appDescription": {
-    "message": "An awsome multi-search tool to speed up your language learning process",
+    "message": "An awsome Multisearch tool to speed up your word research",
     "description": "The description of the application"
   }
 }

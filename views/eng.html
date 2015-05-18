@@ -1,20 +1,21 @@
-<div class="container">
-	<br>
+
+	
 	<form class="form-horizontal" name="form" ng-submit="save(form)" novalidate>
 	  <fieldset>
+	  	<!-- <h3>Hello</h3> -->
 	    <legend>Add new tab</legend>
 	    <div class="form-group">
-	      <label for="tabName" class="col-lg-2 control-label">Name</label>
-	      <div class="col-lg-10">
+	      <label for="tabName" class="col-lg-1 control-label">Name</label>
+	      <div class="col-lg-11">
 	        <input type="text" class="form-control" id="tabName" placeholder="What you like to call this tab" ng-model="newtab.name" required>
 	      </div>
 	    </div>
 	    <div class="form-group">
-	      <label for="inputUrl" class="col-lg-2 control-label">Url</label>
-	      <div class="col-lg-10">
+	      <label for="inputUrl" class="col-lg-1 control-label">Url</label>
+	      <div class="col-lg-11">
 	        <input type="text" class="form-control" id="inputUrl" placeholder="Please provide the url to open on this tab" ng-model="newtab.url" required>
-	        <span class="help-block">The search portion of the URL must be pointed with [search] tag. For example: http://google.com/[search] is a valid url</span>
-	        <div class="checkbox">
+	        <span class="help-block"><em>The <strong>"search string"</strong> part of an URL must be identified with a <code>[search]</code> placeholder.<br> For example: <code>http://images.google.com/search?q=<strong>[search]</strong>&tbm=isch&sout=1</code> is a valid url for google image search</em></span>
+	        <div class="checkbox" ng-if="travailability">
 	          <label>
 	            <input type="checkbox" ng-model="newtab.translate"> Translate this tab with Google translate
 	          </label>
@@ -23,8 +24,8 @@
 	    </div>
 
 	    <div class="form-group">
-	      <div class="col-lg-10 col-lg-offset-2">
-	        <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Save</button>
+	      <div class="col-lg-11 col-lg-offset-1">
+	        <button type="submit" class="btn btn-primary btn-block" ng-disabled="form.$invalid">Save</button>
 	      </div>
 	    </div>
 	  </fieldset>
@@ -54,4 +55,3 @@
 		</tbody>
 	</table>
 
-</div>
