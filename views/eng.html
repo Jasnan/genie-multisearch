@@ -1,57 +1,93 @@
+<uib-tabset justified="true">
+    <uib-tab heading="Tab Settings">
+			<div class="panel panel-default">
+			  <div class="panel-body">
+			  	<form class="form-horizontal" name="form" ng-submit="save(form)" novalidate>
+			  	  <fieldset>
+			  	    <div class="form-group">
+			  	      <label for="tabName" class="col-lg-1 control-label">Name</label>
+			  	      <div class="col-lg-11">
+			  	        <input type="text" class="form-control" id="tabName" placeholder="What you like to call this tab" ng-model="newtab.name" required>
+			  	      </div>
+			  	    </div>
+			  	    <div class="form-group">
+			  	      <label for="inputUrl" class="col-lg-1 control-label">Url</label>
+			  	      <div class="col-lg-11">
+			  	        <input type="text" class="form-control" id="inputUrl" placeholder="Please provide the url to open on this tab" ng-model="newtab.url" required>
+			  	        <span class="help-block"><em>The <strong>"search string"</strong> part of an URL must be identified with a <code>[search]</code> placeholder.<br> For example: <code>http://images.google.com/search?q=<strong>[search]</strong>&tbm=isch&sout=1</code> is a valid url for google image search</em></span>
+			  	        <div class="checkbox" ng-if="isTrAvailable()">
+			  	          <label>
+			  	            <input type="checkbox" ng-model="newtab.translate"> Translate this tab with Google translate
+			  	          </label>
+			  	        </div>
+			  	      </div>
+			  	    </div>
 
-	
-	<form class="form-horizontal" name="form" ng-submit="save(form)" novalidate>
-	  <fieldset>
-	  	<!-- <h3>Hello</h3> -->
-	    <legend>Add new tab</legend>
-	    <div class="form-group">
-	      <label for="tabName" class="col-lg-1 control-label">Name</label>
-	      <div class="col-lg-11">
-	        <input type="text" class="form-control" id="tabName" placeholder="What you like to call this tab" ng-model="newtab.name" required>
-	      </div>
-	    </div>
-	    <div class="form-group">
-	      <label for="inputUrl" class="col-lg-1 control-label">Url</label>
-	      <div class="col-lg-11">
-	        <input type="text" class="form-control" id="inputUrl" placeholder="Please provide the url to open on this tab" ng-model="newtab.url" required>
-	        <span class="help-block"><em>The <strong>"search string"</strong> part of an URL must be identified with a <code>[search]</code> placeholder.<br> For example: <code>http://images.google.com/search?q=<strong>[search]</strong>&tbm=isch&sout=1</code> is a valid url for google image search</em></span>
-	        <div class="checkbox" ng-if="travailability">
-	          <label>
-	            <input type="checkbox" ng-model="newtab.translate"> Translate this tab with Google translate
-	          </label>
-	        </div>
-	      </div>
-	    </div>
+			  	    <div class="form-group">
+			  	      <div class="col-lg-offset-6">
+			  	        <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Save</button>
+			  	      </div>
+			  	    </div>
+			  	  </fieldset>
+			  	</form>
+			  </div>
+			</div>
+			
 
-	    <div class="form-group">
-	      <div class="col-lg-11 col-lg-offset-1">
-	        <button type="submit" class="btn btn-primary btn-block" ng-disabled="form.$invalid">Save</button>
-	      </div>
-	    </div>
-	  </fieldset>
-	</form>
+			<table class="table table-striped table-bordered">
+				<thead>
+					<tr>
+					    <th class="col-md-1">Tabs #</th>
+					    <th class="col-md-2">Name</th>
+					    <th class="col-md-6">Url</th>
+					    <th class="col-md-1">Translate</th>
+					    <th class="col-md-2">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="asd in tabs track by $index">
+					    <td>{{$index + 1}}</td>
+					    <td>{{asd.name}}</td>
+					    <td>{{asd.url}}</td>
+					    <td>{{asd.translate | checkmark}}</td>
+					    <td>
+					        <a href="" ng-click="edit(asd)">edit</a> |
+					        <a href="" ng-click="delete(asd)">delete</a>
+					    </td>
+					</tr>
+				</tbody>
+			</table>
+    </uib-tab>
+    <uib-tab heading="Advanced Settings">
+    	<div class="panel panel-default">
+    	  <div class="panel-body">
+			  	<form class="form-horizontal" name="form1" ng-submit="adSave(form1)" novalidate>
+			  	  <fieldset>
+			  	    <div class="form-group" ng-if="isTrAvailable()">
+			  	      <label for="inputUrl" class="col-lg-1 control-label">Translate Url</label>
+			  	      <div class="col-lg-11">
+			  	        <input type="text" class="form-control" id="inputUrl" placeholder="Please provide the url to open on this tab" ng-model="translator" required>
+			  	        <span class="help-block"><em>The url to translate must be identified with a <code>[translate]</code> placeholder.<br> For example: <code>http://translate.google.com/translate?hl=en&sl=de&tl=en&u=<strong>[translate]</strong></code> is a valid translate url for German to English</em></span>
+			  	      </div>
+			  	    </div>
 
-	<table class="table table-striped table-bordered">
-		<thead>
-			<tr>
-			    <th class="col-md-1">Tabs #</th>
-			    <th class="col-md-2">Name</th>
-			    <th class="col-md-6">Url</th>
-			    <th class="col-md-1">Translate</th>
-			    <th class="col-md-2">Action</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="asd in tabs track by $index">
-			    <td>{{$index + 1}}</td>
-			    <td>{{asd.name}}</td>
-			    <td>{{asd.url}}</td>
-			    <td>{{asd.translate | checkmark}}</td>
-			    <td>
-			        <a href="" ng-click="edit(asd)">edit</a> |
-			        <a href="" ng-click="delete(asd)">delete</a>
-			    </td>
-			</tr>
-		</tbody>
-	</table>
+							<div class="form-group">
+								<div class="col-lg-offset-1 col-lg-11 checkbox">
+								  <label>
+								    <input type="checkbox" ng-model="mStatus.showInMenu" ng-checked="{{mStatus.showInMenu}}"> Show this language in drop down/context menu?
+								  </label>
+								</div>
+							</div>
+							
+			  	    <div class="form-group">
+			  	      <div class="col-lg-offset-6">
+			  	        <button type="submit" class="btn btn-primary" ng-disabled="form1.$invalid">{{saveBtnTxt}}</button>
+			  	      </div>
+			  	    </div>
 
+			  	  </fieldset>
+			  	</form>
+			  </div>
+			</div>
+    </uib-tab>
+</uib-tabset>

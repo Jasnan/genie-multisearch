@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../assets/styles/bootstrap.min.css">
-    <!-- <link href="../assets/styles/main.css" rel="stylesheet"> -->
+    <link href="../assets/styles/main.css" rel="stylesheet">
   </head>
   <body ng-controller="optionsCtrl">
     <div class="container-fluid">
       <br>
-      <div class="panel panel-default">
+      <div class="panel panel-primary">
         <div class="panel-heading">
           <h2 class="panel-title">Genie Multisearch Options</h2>
         </div>
@@ -19,39 +19,45 @@
                 <label for="state" class="control-label">My native/main language is:</label>
                 <select id="state" 
                     ng-model="nativeLang"
-                    ng-options="key as value for (key , value) in nativeLangs"
+                    ng-options="key as value for (key , value) in nativeMenu"
                     ng-change="setNativeLang(nativeLang)"
                     class="form-control">
                 </select>
               </div>            
-              
+
               <div class="list-group">                
-                  <a ng-repeat="(key , value) in availableLangs" ui-sref-active="active" class="list-group-item" ui-sref="details({ id: nativeLang + key })">{{value}}</a>
+                  <a class="list-group-item" ng-repeat="lang in langMenu track by $index" ui-sref-active="active" class="list-group-item" ui-sref="details({ id: nativeLang + lang.code })">
+                  <!-- <span class="badge">{{$index}}</span> -->
+                  {{lang.name}}</a>
+
               </div>
               
-              <div class="well">
-                <h4>Warning!</h4>
-                <p>Use the following button with caution. It will wipe all your custom tab settings and reset tabs/languages settings to default.</p>
-                <br>
-                <a href="#" ng-click="loadDefaults()" class="btn btn-danger btn-sm btn-block">Reset all tabs to defaults?</a>
+              <div class="panel panel-warning">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Warning!</h3>
+                </div>
+                <div id="resetbutton" class="panel-body well">
+                  Resetting will erase all your custom settings, including tabs you added for a language, and will restore the default settings.
+                  <br><br>
+                  <a href="#" ng-click="loadDefaults()" class="btn btn-danger btn-sm btn-block">Reset to default settings</a>
+                </div>
               </div>
                 
             </div>
             
             <div class="col-md-9">
-              <div ui-view=""></div>
+                <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+                  <div ui-view=""></div>
             </div>
           </div>
-
-
-          
-          
         </div>
       </div>
-
     </div>
 
     <script src="../assets/js/angular.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/ui-bootstrap-custom-tpls-0.14.3.min.js"></script>
     <script src="../assets/js/angular-sanitize.min.js"></script> 
     <script src="../assets/js/angular-ui-router.min.js"></script>       
     <script src="../assets/js/ngStorage.min.js"></script>

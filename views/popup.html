@@ -1,60 +1,58 @@
 <!doctype html>
 <html ng-app="credise">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../assets/styles/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css"> -->
-    <!-- <link href="../assets/styles/main.css" rel="stylesheet"> -->
-    <style>
-      div.wraper {
-        width: 400px;   
-        padding: 20px;
-        font-size: 14px;
-      }
-    </style>
-  </head>
-  <body ng-controller="popupCtrl">
-    <div class="wraper container-fluid">
-        <form class="form-horizontal" name="form" ng-submit="search(form)" novalidate>
-            <fieldset>
-                <!-- <legend>Credise MultiSearch</legend> -->
-                <div class="form-group">
-                  <label for="search-box" class="col-lg-2 control-label">Which word do you want to look up?</label>
-                  <div class="col-lg-10">
-                    <input id="search-box" class="form-control" type="text" placeholder="search here" ng-model="searchTerm" required>
-                  </div>
-                </div>  
-                
-                <div class="form-group">
-                  <label for="state" class="col-lg-2 control-label">Which language are you learning?</label>
-                  <div class="col-lg-10">
-                  <select id="state" class="form-control"
-                      ng-model="searchLang"
-                      ng-options="key as value for (key , value) in langOptions"
-                      ng-model="searchLang"
-                      >
-                  </select>
 
-                  </div>
-                </div> 
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../assets/styles/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css"> -->
+  <!-- <link href="../assets/styles/main.css" rel="stylesheet"> -->
+  <style>
+  div.wraper {
+    width: 400px;
+    padding: 20px;
+    font-size: 14px;
+  }
+  </style>
+</head>
 
-                <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
-                        <button type="submit" id="search" class="btn btn-primary btn-sm" ng-disabled="form.$invalid">Search</button>
-                    </div>
-                </div>       
-            </fieldset>
-        </form>
-        <a href="" id="settings" ng-click="openSettings()">          
+<body ng-controller="popupCtrl">
+  <div class="wraper container-fluid">
+    <form class="form-horizontal" name="form" ng-submit="search(form)" novalidate>
+      <fieldset>
+        <!-- <legend>Credise MultiSearch</legend> -->
+        <div class="form-group">
+          <label for="search-box" class="col-lg-2 control-label">Which word do you want to look up?</label>
+          <div class="col-lg-10">
+            <input id="search-box" class="form-control" type="text" placeholder="search here" ng-model="searchTerm" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="state" class="col-lg-2 control-label">Which language are you learning?</label>
+          <div class="col-lg-10">
+            <select id="state" class="form-control" ng-model="searchLang" ng-options="lang.code as lang.name for lang in langMenu" ng-model="searchLang">
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <button type="submit" id="search" class="btn btn-primary btn-sm" ng-disabled="form.$invalid">Search</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <a href="" id="settings" ng-click="openSettings()">          
             Settings
         </a>
-    </div>
-    <script src="../assets/js/angular.min.js"></script>
-    <script src="../assets/js/angular-ui-router.min.js"></script>
-    <script src="../assets/js/angular-sanitize.min.js"></script>
-    <script src="../assets/js/ngStorage.min.js"></script>
-    <script src="../assets/js/lodash.min.js"></script> 
-    <script src="../scripts/app.js"></script>   
-    <script src="../scripts/languages.factory.js"></script> 
-  </body>
+    <em class="pull-right">Genie Multisearch</em>
+  </div>
+  <script src="../assets/js/angular.min.js"></script>
+  <script src="../assets/js/ui-bootstrap-custom-tpls-0.14.3.min.js"></script>
+  <script src="../assets/js/angular-ui-router.min.js"></script>
+  <script src="../assets/js/angular-sanitize.min.js"></script>
+  <script src="../assets/js/ngStorage.min.js"></script>
+  <script src="../assets/js/lodash.min.js"></script>
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/languages.factory.js"></script>
+</body>
+
 </html>

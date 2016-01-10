@@ -1,0 +1,462 @@
+[
+  // Lang 1: hebrew 
+  {
+    "language": "hebrew",
+    "shortcode": "heb",
+    "translator": "http://translate.google.com/translate?hl=en&sl=he&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engheb": [
+            {
+                "name": "Google Images",
+                "url": "http://images.google.co.il/search?q=[search]&tbm=isch&sout=1",
+                "translate": true,
+                "id": 0
+            },
+            {
+                "name": "Forvo",
+                "url": "http://he.forvo.com/word/[search]/#he",
+                "id": 1
+            },
+            {
+                "name": "Morfix",
+                "url": "http://www.morfix.co.il/[search]",
+                "id": 2
+            },
+            {
+                "name": "Wiktionary",
+                "url": "https://he.wiktionary.org/wiki/[search]",
+                "translate": true,
+                "id": 3
+            }
+        ]
+      }
+    ]
+  },
+
+  // Lang 2: dutch
+  {
+    "language": "dutch",
+    "shortcode": "nld",
+    "translator": "http://translate.google.com/translate?hl=en&sl=nl&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engnld": [
+            {
+                "name": "Google Images",
+                "url": "http://images.google.nl/search?q=[search]&tbm=isch&sout=1",
+                "translate": true,
+                "id": 0
+            },
+            {
+                "name": "Forvo",
+                "url": "http://nl.forvo.com/word/[search]/#nl",
+                "id": 1
+            },
+            {
+                "name": "Babla",
+                "url": "http://en.bab.la/dictionary/dutch-english/[search]",
+                "id": 2
+            },
+            {
+                "name": "Vandale",
+                "url": "http://www.vandale.nl/opzoeken?pattern=[search]&lang=nn",
+                "id": 3
+            }
+        ]
+      }
+    ]
+  },
+
+  // Lang 3: french
+  {
+    "language": "french",
+    "shortcode": "fre",
+    "translator": "http://translate.google.com/translate?hl=en&sl=fr&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engfre": [
+            {
+                "name": "Google Images",
+                "url": "http://images.google.fr/search?q=[search]&tbm=isch&sout=1",
+                "translate": true,
+                "id": 0
+            },
+            {
+                "name": "Forvo",
+                "url": "http://fr.forvo.com/word/[search]/#fr",
+                "id": 1
+            },
+            {
+                "name": "Linguee",
+                "url": "http://www.linguee.com/english-french/search?source=auto&query=[search]",
+                "id": 2
+            },
+            {
+                "name": "Wiktionnaire",
+                "url": "http://fr.wiktionary.org/wiki/[search]",
+                "translate": true,
+                "id": 3
+            }
+        ]
+      }
+    ]
+  },
+
+  // Lang 4: portuguese
+  {
+    "language": "portuguese",
+    "shortcode": "por",
+    "translator": "http://translate.google.com/translate?hl=en&sl=pt&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engpor": [
+            {
+                "name": "Google Images",
+                "url": "http://images.google.pt/search?q=[search]&tbm=isch&sout=1",
+                "translate": true,
+                "id": 0
+            },
+            {
+                "name": "Forvo",
+                "url": "http://pt.forvo.com/word/[search]/#pt",
+                "id": 1
+            },
+            {
+                "name": "Bilingual Dictionary",
+                "url": "http://www.linguee.com/english-portuguese/search?source=portuguese&query=[search]",
+                "id": 2
+            },
+            {
+                "name": "Priberam",
+                "url": "http://www.priberam.pt/dlpo/default.aspx?pal=[search]",
+                "translate": true,
+                "id": 3
+            }
+        ]
+      }
+    ]
+  },
+
+  // Lang 5: russian
+  {
+    "language": "russian",
+    "shortcode": "rus",
+    "translator": "http://translate.google.com/translate?hl=en&sl=ru&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engrus": [
+            {
+                "name": "Google Images",
+                "url": "http://images.google.ru/search?q=[search]&tbm=isch&sout=1",
+                "translate": true,
+                "id": 0
+            },
+            {
+                "name": "Forvo",
+                "url": "http://ru.forvo.com/word/[search]/#ru",
+                "id": 1
+            },
+            {
+                "name": "Lingvo",
+                "url": "http://lingvopro.abbyyonline.com/en/Translate/ru-en/[search]",
+                "id": 2
+            },
+            {
+                "name": "Wiktionary",
+                "url": "http://ru.wiktionary.org/wiki/[search]",
+                "translate": true,
+                "id": 3
+            }
+        ]
+      }
+    ]
+  },
+
+  // Lang 6: mandarin
+  {
+    "language": "mandarin",
+    "shortcode": "zho",
+    "translator": "http://translate.google.com/translate?hl=en&sl=zh&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engzho": [
+            {
+                "name": "Google Images",
+                "url": "http://images.google.com.hk/search?q=[search]&tbm=isch&sout=1",
+                "translate": true,
+                "id": 0
+            },
+            {
+                "name": "Forvo",
+                "url": "http://zh.forvo.com/word/[search]/#zh",
+                "id": 1
+            },
+            {
+                "name": "Dictionary",
+                "url": "http://www.nciku.com/search/all/[search]",
+                "id": 2
+            },
+            {
+                "name": "Zdic",
+                "url": " http://www.zdic.net/sousuo/?q=[search]",
+                "translate": true,
+                "id": 3
+            }
+        ]
+      }
+    ]
+  },
+
+  // Lang 7: japanese
+  {
+    "language": "japanese",
+    "shortcode": "jpn",
+    "translator": "http://translate.google.com/translate?hl=en&sl=ja&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engjpn": [
+            {
+                "name": "Google Images",
+                "url": "http://images.google.co.jp/search?q=[search]&tbm=isch&sout=1",
+                "translate": true,
+                "id": 0
+            },
+            {
+                "name": "Forvo",
+                "url": "http://ja.forvo.com/word/[search]/#ja",
+                "id": 1
+            },
+            {
+                "name": "Jisho",
+                "url": "http://jisho.org/search/[search]%20%23kanji",
+                "id": 2
+            },
+            {
+                "name": "Dictionary",
+                "url": "http://www.tanoshiijapanese.com/dictionary/index.cfm?j=[search]&e=&search=Search+%3E",
+                "id": 3
+            },
+            {
+                "name": "Kanjidamage",
+                "url": "http://www.kanjidamage.com/kanji/search?utf8=✓&q=[search]",
+                "id": 4
+            }
+        ]
+      }
+    ]
+  },
+
+  // Lang 8: italian
+  {
+    "language": "italian",
+    "shortcode": "ita",
+    "translator": "http://translate.google.com/translate?hl=en&sl=it&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engita": [
+            {
+                "name": "Google Images",
+                "url": "http://images.google.it/search?q=[search]&tbm=isch&sout=1",
+                "translate": true,
+                "id": 0
+            },
+            {
+                "name": "Forvo",
+                "url": "http://it.forvo.com/word/[search]/#it",
+                "id": 1
+            },
+            {
+                "name": "WordReference",
+                "url": " http://www.wordreference.com/iten/[search]",
+                "id": 2
+            },
+            {
+                "name": "Dizionario Italiano",
+                "url": "http://www.grandidizionari.it/Dizionario_Italiano/parola/parola.aspx?query=[search]",
+                "translate": true,
+                "id": 3
+            }
+        ]
+      }
+    ]
+  },
+
+  // Lang 9: spanish
+  {
+    "language": "spanish",
+    "shortcode": "spa",
+    "translator": "http://translate.google.com/translate?hl=en&sl=es&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engspa": [
+            {
+                "name": "Google Images",
+                "url": "http://images.google.es/search?q=[search]&tbm=isch&sout=1",
+                "translate": true,
+                "id": 0
+            },
+            {
+                "name": "Forvo",
+                "url": "http://es.forvo.com/word/[search]/#es",
+                "id": 1
+            },
+            {
+                "name": "Wordreference",
+                "url": "http://www.wordreference.com/es/en/translation.asp?spen=[search]",
+                "id": 2
+            },
+            {
+                "name": "Linguee",
+                "url": "http://www.linguee.com/english-spanish/search?source=spanish&query=[search]",
+                "id": 3
+            },
+            {
+                "name": "Dictionary",
+                "url": "http://es.thefreedictionary.com/[search]",
+                "translate": true,
+                "id": 4
+            }
+        ]
+      }
+    ]
+  },
+
+
+  // Lang 9: german
+  {
+    "language": "german",
+    "shortcode": "deu",
+    "translator": "http://translate.google.com/translate?hl=en&sl=de&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engdeu": [
+            {
+                "name": "Google Images",
+                "url": "http://images.google.de/search?q=[search]&tbm=isch&sout=1",
+                "translate": true,
+                "id": 0
+            },
+            {
+                "name": "Forvo",
+                "url": "http://de.forvo.com/word/[search]/#de",
+                "id": 1
+            },
+            {
+                "name": "Dict CC",
+                "url" : "http://www.dict.cc/?s=[search]",
+                "id": 2
+            },
+            {
+                "name": "Dictionary",
+                "url" : "http://de.thefreedictionary.com/[search]",
+                "translate": true,
+                "id": 3
+            }
+        ]
+      }
+    ]
+  },
+
+  // Lang 10: english
+  {
+    "language": "english",
+    "shortcode": "eng",
+    "resources": [
+      {
+        "engeng": [
+            {
+                "name": "Google Images",
+                "url": "http://images.google.com/search?q=[search]&tbm=isch&sout=1",
+                "id": 0
+            },
+            {
+                "name": "Forvo",
+                "url": "http://www.forvo.com/word/[search]/#en",
+                "id": 1
+            },
+            {
+                "name": "WordReference",
+                "url" : "http://www.wordreference.com/definition/[search]",
+                "id": 2
+            },
+            {
+                "name": "Google Audio Pronunciation",
+                "url" : "https://ssl.gstatic.com/dictionary/static/sounds/de/0/[search].mp3",
+                "id": 3
+            }
+        ]
+      }
+    ]
+  },
+  // Others
+  // Lang 11: arabic
+  {
+    "language": "arabic",
+    "shortcode": "ara",
+    "translator": "http://translate.google.com/translate?hl=en&sl=ar&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engara": [
+            
+        ]
+      }
+    ]
+  },
+
+  // Lang 12: hindi
+  {
+    "language": "hindi",
+    "shortcode": "hin",
+    "translator": "http://translate.google.com/translate?hl=en&sl=hi&tl=en&u=[translate]",
+    "resources": [
+      {
+        "enghin": [
+            
+        ]
+      }
+    ]
+  },
+
+  // Lang 13: korean
+  {
+    "language": "korean",
+    "shortcode": "kor",
+    "translator": "http://translate.google.com/translate?hl=en&sl=ko&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engkor": [
+            
+        ]
+      }
+    ]
+  },
+
+  // Lang 13: polish
+  {
+    "language": "polish",
+    "shortcode": "pol",
+    "translator": "http://translate.google.com/translate?hl=en&sl=pl&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engpol": [
+            
+        ]
+      }
+    ]
+  },
+
+  // Lang 14: romanian
+  {
+    "language": "romanian",
+    "shortcode": "rum",
+    "translator": "http://translate.google.com/translate?hl=en&sl=ro&tl=en&u=[translate]",
+    "resources": [
+      {
+        "engrum": [
+            
+        ]
+      }
+    ]
+  }
+]
