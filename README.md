@@ -1,9 +1,13 @@
-# CREDISE Multi-Search
+# Genie Multi-Search
 
-CREDISE Multi-Search is a Chrome extension that helps language learners to search multiple websites fast for word research.
+Genie Multi-Search is a free, open-source, google chrome browser extension. It helps language learners(aspiring polygots) to make word research faster.
 
-Basically, this extension will place button at the end of the address bar and when you click it, a dialogue pops up and asks you “Which word do you want to look up?” and also lets you to choose the language you want to search the word. Then within in 2 seconds, you have a Google Images link to the word, a Forvo.com recording to download the pronunciation, a bilingual dictionary entry and a monolingual dictionary (wordreference.com) entry. Magic! 
+Basically, the extension places a button at the top right corner of the address bar.
+
+When you click on it, it will ask you “Which word do you want to look up?” and "Which language are you learning?". Hit search button, and within in seconds it opens a number of tabs based on your settings for the given language. 
+
+As an eample, for the french language, You will get a Google Images link to the word, a Forvo.com recording to download the pronunciation, a bilingual dictionary entry and a monolingual dictionary (wordreference.com) entry. Magic! 
 
 # Why this Extension
 
-Typically, it’s a bit of a pain to set up the above mentioned behavior in Chrome using Macros, but in preparation for learning a new language using the methods mentioned in [Fluent-Forever](http://fluent-forever.com/), I’ve decided to write one that makes it a lot easier.
+To learn a language as per the learning methods mentioned in [Fluent-Forever](http://fluent-forever.com/), you have to get atleast 4 resources (Image, Pronounciation audio, Bilingual, Monolingual dictionary entries) for a new word. Typically, it’s a bit of a pain to set up the above mentioned multi-search behavior in Chrome using Macros. So I have decided to write one that makes it a lot easier.
